@@ -71,8 +71,8 @@ public class GameService {
             BigInteger game = (BigInteger) tuple[0];
             BigInteger loves = (BigInteger) tuple[1];
 
-            Optional<Game> byId = gameRepository.findById(game.longValue());
-            byId.ifPresent(value -> mostLovedGames.add(new MostLovedGamesDTO(value, loves)));
+            gameRepository.findById(game.longValue())
+                    .ifPresent(value -> mostLovedGames.add(new MostLovedGamesDTO(value, loves)));
         }
         return mostLovedGames;
     }
