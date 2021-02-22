@@ -23,7 +23,7 @@ public class PlayerController {
         return playerService.createPlayer(playerDTO);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{id}/loved-games")
     public List<Game> playerLovedGames(@PathVariable Long id) {
         return playerService.getAllPlayerLovedGames(id);
     }
